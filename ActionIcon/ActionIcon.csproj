@@ -3,6 +3,14 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <UseWPF>true</UseWPF>
+    <Authors>Wildgoat</Authors>
+    <Company>Wildgoat</Company>
+    <Description>A library to create multiple different icons using a base image.</Description>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageProjectUrl>https://github.com/WildGoat07/ActionIcon</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/WildGoat07/ActionIcon</RepositoryUrl>
+    <NeutralLanguage>en</NeutralLanguage>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup>
@@ -37,6 +45,10 @@
     <None Remove="icons\Undo.png" />
     <None Remove="icons\Upload.png" />
     <None Remove="icons\Warning.png" />
+    <None Include="..\LICENSE">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 
   <ItemGroup>

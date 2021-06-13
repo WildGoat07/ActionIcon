@@ -60,11 +60,17 @@ namespace ActionIcon
             typeof(ActionIcon),
             new FrameworkPropertyMetadata(null, FrameworkPropertyMetadataOptions.AffectsRender));
 
+        /// <summary>
+        /// Constructor.
+        /// </summary>
         public ActionIcon()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Icon used in the top left area
+        /// </summary>
         [Description("Icon in the top left."), Category("Appearance")]
         public Icon Action
         {
@@ -72,6 +78,9 @@ namespace ActionIcon
             set => SetValue(ActionProperty, value);
         }
 
+        /// <summary>
+        /// Custom source image for the top left area. Overwrites the Action property.
+        /// </summary>
         [Description("Custom source for the icon in the top left. The Action property will have no effect."), Category("Appearance")]
         public ImageSource ActionSource
         {
@@ -79,6 +88,9 @@ namespace ActionIcon
             set => SetValue(ActionSourceProperty, value);
         }
 
+        /// <summary>
+        /// Source image of the base reference icon.
+        /// </summary>
         [Description("Source of the main icon."), Category("Appearance")]
         public ImageSource BaseSource
         {
@@ -86,6 +98,9 @@ namespace ActionIcon
             set => SetValue(BaseSourceProperty, value);
         }
 
+        /// <summary>
+        /// Icon used in the bottom left area
+        /// </summary>
         [Description("Icon in the bottom left."), Category("Appearance")]
         public Icon Modifier
         {
@@ -93,6 +108,9 @@ namespace ActionIcon
             set => SetValue(ModifierProperty, value);
         }
 
+        /// <summary>
+        /// Custom source image for the bottom left area. Overwrites the Action property.
+        /// </summary>
         [Description("Custom source for the icon in the bottom left. The Modifier property will have no effect."), Category("Appearance")]
         public ImageSource ModifierSource
         {
@@ -100,6 +118,9 @@ namespace ActionIcon
             set => SetValue(ModifierSourceProperty, value);
         }
 
+        /// <summary>
+        /// Icon used in the bottom right area
+        /// </summary>
         [Description("Icon in the bottom right."), Category("Appearance")]
         public Icon Status
         {
@@ -107,6 +128,9 @@ namespace ActionIcon
             set => SetValue(StatusProperty, value);
         }
 
+        /// <summary>
+        /// Custom source image for the bottom right area. Overwrites the Action property.
+        /// </summary>
         [Description("Custom source for the icon in the bottom right. The Status property will have no effect."), Category("Appearance")]
         public ImageSource StatusSource
         {
