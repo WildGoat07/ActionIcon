@@ -68,6 +68,12 @@
                 x:Key="Pause"
                 UriSource="/ActionIcon;component/icons/Pause.png" />
             <BitmapImage
+                x:Key="Redo"
+                UriSource="/ActionIcon;component/icons/Redo.png" />
+            <BitmapImage
+                x:Key="Refresh"
+                UriSource="/ActionIcon;component/icons/Refresh.png" />
+            <BitmapImage
                 x:Key="Previous"
                 UriSource="/ActionIcon;component/icons/Previous.png" />
             <BitmapImage
@@ -77,11 +83,23 @@
                 x:Key="Run"
                 UriSource="/ActionIcon;component/icons/Run.png" />
             <BitmapImage
+                x:Key="Save"
+                UriSource="/ActionIcon;component/icons/Save.png" />
+            <BitmapImage
+                x:Key="Share"
+                UriSource="/ActionIcon;component/icons/Share.png" />
+            <BitmapImage
+                x:Key="Star"
+                UriSource="/ActionIcon;component/icons/Star.png" />
+            <BitmapImage
                 x:Key="Stop"
                 UriSource="/ActionIcon;component/icons/Stop.png" />
             <BitmapImage
                 x:Key="Sync"
                 UriSource="/ActionIcon;component/icons/Sync.png" />
+            <BitmapImage
+                x:Key="Undo"
+                UriSource="/ActionIcon;component/icons/Undo.png" />
             <BitmapImage
                 x:Key="Upload"
                 UriSource="/ActionIcon;component/icons/Upload.png" />

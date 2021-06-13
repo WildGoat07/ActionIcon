@@ -26,10 +26,15 @@ namespace ActionIcon
         OPEN,
         PAUSE,
         PREVIOUS,
+        REDO,
+        REFRESH,
         REMOVE,
         RUN,
+        SAVE,
+        STAR,
         STOP,
         SYNC,
+        UNDO,
         UPLOAD,
         WARNING
     }

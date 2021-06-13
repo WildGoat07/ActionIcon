@@ -25,10 +25,16 @@
     <None Remove="icons\Open.png" />
     <None Remove="icons\Pause.png" />
     <None Remove="icons\Previous.png" />
+    <None Remove="icons\Redo.png" />
+    <None Remove="icons\Refresh.png" />
     <None Remove="icons\Remove.png" />
     <None Remove="icons\Run.png" />
+    <None Remove="icons\Save.png" />
+    <None Remove="icons\share.png" />
+    <None Remove="icons\Star.png" />
     <None Remove="icons\Stop.png" />
     <None Remove="icons\Sync.png" />
+    <None Remove="icons\Undo.png" />
     <None Remove="icons\Upload.png" />
     <None Remove="icons\Warning.png" />
   </ItemGroup>
@@ -55,10 +61,16 @@
     <Resource Include="icons\Open.png" />
     <Resource Include="icons\Pause.png" />
     <Resource Include="icons\Previous.png" />
+    <Resource Include="icons\Redo.png" />
+    <Resource Include="icons\Refresh.png" />
     <Resource Include="icons\Remove.png" />
     <Resource Include="icons\Run.png" />
+    <Resource Include="icons\Save.png" />
+    <Resource Include="icons\Share.png" />
+    <Resource Include="icons\Star.png" />
     <Resource Include="icons\Stop.png" />
     <Resource Include="icons\Sync.png" />
+    <Resource Include="icons\Undo.png" />
     <Resource Include="icons\Upload.png" />
     <Resource Include="icons\Warning.png" />
   </ItemGroup>
