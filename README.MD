@@ -2,6 +2,8 @@
 
 ActionIcon is a very small library with a single custom WPF Control : `ActionIcon`. It uses an icon image source and can add onto it small modifiers like the 'add' modifier, or 'edit' for example.
 
+[Nuget package](https://www.nuget.org/packages/ActionIcon).
+
 ## Example
 
 Consider the file "Document_16x.png" ![Document_16x.png](https://user-images.githubusercontent.com/30344403/121817128-b08ee600-cc7f-11eb-9aaf-0da7342aba86.png) a resource of the project.
