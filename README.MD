@@ -56,3 +56,5 @@ Finally, you can obviously use your own icon modifiers using `ActionSource`, `St
 
 Output : ![image](https://user-images.githubusercontent.com/30344403/121817311-e41e4000-cc80-11eb-9c3c-6c606ef734d3.png)
 
+Keep in mind to use images around 8x8 pixels for better visibility.
+
