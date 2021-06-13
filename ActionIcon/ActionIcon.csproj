@@ -1,0 +1,65 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="icons\Add.png" />
+    <None Remove="icons\Alert.png" />
+    <None Remove="icons\Delete.png" />
+    <None Remove="icons\Download.png" />
+    <None Remove="icons\Edit.png" />
+    <None Remove="icons\Edit_reverse.png" />
+    <None Remove="icons\Error.png" />
+    <None Remove="icons\Find.png" />
+    <None Remove="icons\Help.png" />
+    <None Remove="icons\Import.png" />
+    <None Remove="icons\Info.png" />
+    <None Remove="icons\Lock.png" />
+    <None Remove="icons\New.png" />
+    <None Remove="icons\Next.png" />
+    <None Remove="icons\No.png" />
+    <None Remove="icons\Ok.png" />
+    <None Remove="icons\Open.png" />
+    <None Remove="icons\Pause.png" />
+    <None Remove="icons\Previous.png" />
+    <None Remove="icons\Remove.png" />
+    <None Remove="icons\Run.png" />
+    <None Remove="icons\Stop.png" />
+    <None Remove="icons\Sync.png" />
+    <None Remove="icons\Upload.png" />
+    <None Remove="icons\Warning.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="icons\Add.png" />
+    <Resource Include="icons\Alert.png" />
+    <Resource Include="icons\Delete.png" />
+    <Resource Include="icons\Download.png" />
+    <Resource Include="icons\Edit.png" />
+    <Resource Include="icons\Edit_reverse.png" />
+    <Resource Include="icons\Error.png" />
+    <Resource Include="icons\Find.png" />
+    <Resource Include="icons\Help.png" />
+    <Resource Include="icons\Import.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="icons\Info.png" />
+    <Resource Include="icons\Lock.png" />
+    <Resource Include="icons\New.png" />
+    <Resource Include="icons\Next.png" />
+    <Resource Include="icons\No.png" />
+    <Resource Include="icons\Ok.png" />
+    <Resource Include="icons\Open.png" />
+    <Resource Include="icons\Pause.png" />
+    <Resource Include="icons\Previous.png" />
+    <Resource Include="icons\Remove.png" />
+    <Resource Include="icons\Run.png" />
+    <Resource Include="icons\Stop.png" />
+    <Resource Include="icons\Sync.png" />
+    <Resource Include="icons\Upload.png" />
+    <Resource Include="icons\Warning.png" />
+  </ItemGroup>
+</Project>
