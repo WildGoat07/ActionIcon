@@ -138,25 +138,23 @@ namespace ActionIcon
             set => SetValue(StatusSourceProperty, value);
         }
 
-        private Data Data => (Data)DataContext;
-
         protected override void OnPropertyChanged(DependencyPropertyChangedEventArgs e)
         {
             base.OnPropertyChanged(e);
             if (e.Property == BaseSourceProperty)
-                Data.BaseSource = (ImageSource)e.NewValue;
+                baseImage.Source = (ImageSource)e.NewValue;
             else if (e.Property == ActionSourceProperty)
-                Data.ActionSource = (ImageSource)e.NewValue;
+                actionImage.Source = (ImageSource)e.NewValue;
             else if (e.Property == StatusSourceProperty)
-                Data.StatusSource = (ImageSource)e.NewValue;
+                statusImage.Source = (ImageSource)e.NewValue;
             else if (e.Property == ModifierSourceProperty)
-                Data.ModifierSource = (ImageSource)e.NewValue;
+                modifierImage.Source = (ImageSource)e.NewValue;
             else if (e.Property == ActionProperty && ActionSource == null)
-                Data.ActionSource = TryFindResource(GetIconKey((Icon)e.NewValue)) as ImageSource;
+                actionImage.Source = TryFindResource(GetIconKey((Icon)e.NewValue)) as ImageSource;
             else if (e.Property == StatusProperty && StatusSource == null)
-                Data.StatusSource = TryFindResource(GetIconKey((Icon)e.NewValue)) as ImageSource;
+                statusImage.Source = TryFindResource(GetIconKey((Icon)e.NewValue)) as ImageSource;
             else if (e.Property == ModifierProperty && ModifierSource == null)
-                Data.ModifierSource = TryFindResource(GetIconKey((Icon)e.NewValue)) as ImageSource;
+                modifierImage.Source = TryFindResource(GetIconKey((Icon)e.NewValue)) as ImageSource;
         }
 
         private string GetIconKey(Icon icon) => icon switch
@@ -194,77 +192,5 @@ namespace ActionIcon
             Icon.WARNING => "Warning",
             _ => null,
         };
-    }
-
-    internal class Data : INotifyPropertyChanged
-    {
-        private ImageSource actionSource;
-        private ImageSource baseSource;
-        private ImageSource modifierSource;
-        private ImageSource statusSource;
-
-        public Data()
-        {
-            actionSource = null;
-            baseSource = null;
-            modifierSource = null;
-            statusSource = null;
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        public ImageSource ActionSource
-        {
-            get => actionSource;
-            set
-            {
-                if (actionSource != value)
-                {
-                    actionSource = value;
-                    OnPropertyChanged(nameof(ActionSource));
-                }
-            }
-        }
-
-        public ImageSource BaseSource
-        {
-            get => baseSource;
-            set
-            {
-                if (baseSource != value)
-                {
-                    baseSource = value;
-                    OnPropertyChanged(nameof(BaseSource));
-                }
-            }
-        }
-
-        public ImageSource ModifierSource
-        {
-            get => modifierSource;
-            set
-            {
-                if (modifierSource != value)
-                {
-                    modifierSource = value;
-                    OnPropertyChanged(nameof(ModifierSource));
-                }
-            }
-        }
-
-        public ImageSource StatusSource
-        {
-            get => statusSource;
-            set
-            {
-                if (statusSource != value)
-                {
-                    statusSource = value;
-                    OnPropertyChanged(nameof(StatusSource));
-                }
-            }
-        }
-
-        protected void OnPropertyChanged(string name) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
     }
 }

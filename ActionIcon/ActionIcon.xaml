@@ -8,9 +8,6 @@
              d:Height="16"
              d:Width="16"
              UseLayoutRounding="True">
-    <UserControl.DataContext>
-        <local:Data />
-    </UserControl.DataContext>
     <UserControl.Resources>
         <ResourceDictionary>
             <BitmapImage
@@ -111,19 +108,19 @@
     <Grid>
         <Image
             Stretch="None"
-            Source="{Binding BaseSource}" />
+            x:Name="baseImage" />
         <Image
-            Source="{Binding StatusSource}"
-            VerticalAlignment="Bottom"
-            HorizontalAlignment="Right"
-            Stretch="None" />
-        <Image
-            Source="{Binding ModifierSource}"
+            x:Name="modifierImage"
             VerticalAlignment="Bottom"
             HorizontalAlignment="Left"
             Stretch="None" />
         <Image
-            Source="{Binding ActionSource}"
+            x:Name="statusImage"
+            VerticalAlignment="Bottom"
+            HorizontalAlignment="Right"
+            Stretch="None" />
+        <Image
+            x:Name="actionImage"
             VerticalAlignment="Top"
             HorizontalAlignment="Left"
             Stretch="None" />
