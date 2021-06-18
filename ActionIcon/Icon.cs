@@ -30,6 +30,7 @@ namespace ActionIcon
         REMOVE,
         RUN,
         SAVE,
+        SAVE_REVERSE,
         STAR,
         STOP,
         SYNC,

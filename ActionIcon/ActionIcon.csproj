@@ -40,6 +40,7 @@
     <None Remove="icons\Remove.png" />
     <None Remove="icons\Run.png" />
     <None Remove="icons\Save.png" />
+    <None Remove="icons\SaveReverse.png" />
     <None Remove="icons\share.png" />
     <None Remove="icons\Star.png" />
     <None Remove="icons\Stop.png" />
@@ -81,6 +82,7 @@
     <Resource Include="icons\Remove.png" />
     <Resource Include="icons\Run.png" />
     <Resource Include="icons\Save.png" />
+    <Resource Include="icons\SaveReverse.png" />
     <Resource Include="icons\Share.png" />
     <Resource Include="icons\Star.png" />
     <Resource Include="icons\Stop.png" />

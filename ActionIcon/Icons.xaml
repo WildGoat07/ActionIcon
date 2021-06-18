@@ -73,6 +73,9 @@
         x:Key="Save"
         UriSource="/ActionIcon;component/icons/Save.png" />
     <BitmapImage
+        x:Key="SaveReverse"
+        UriSource="/ActionIcon;component/icons/SaveReverse.png" />
+    <BitmapImage
         x:Key="Share"
         UriSource="/ActionIcon;component/icons/Share.png" />
     <BitmapImage

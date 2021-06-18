@@ -164,6 +164,7 @@ namespace ActionIcon
             Icon.REMOVE => "Remove",
             Icon.RUN => "Run",
             Icon.SAVE => "Save",
+            Icon.SAVE_REVERSE => "SaveReverse",
             Icon.STAR => "Star",
             Icon.STOP => "Stop",
             Icon.SYNC => "Sync",
