@@ -44,7 +44,7 @@ And you can combine anything you want, but just keep it simple enough to be unde
 
 Output : ![image](https://user-images.githubusercontent.com/30344403/121817263-8be73e00-cc80-11eb-8b54-c84b725cc776.png)
 
-Finally, you can obviously use your own icon modifiers using `ActionSource`, `StatusSource` or `ModifierSource` (just note that if these properties are different than `null`, `Action`, `Status` and `Modifier` will respectively be ignored) :
+Finally, you can obviously use your own icon modifiers using `ActionSource`, `StatusSource` or `ModifierSource` (just note that `Action`, `Status` and `Modifier` will respectively change `ActionSource`, `StatusSource` or `ModifierSource`, the latest set will override the previous one) :
 
 ```xml
 <ai:ActionIcon
