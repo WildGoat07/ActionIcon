@@ -35,6 +35,7 @@ namespace ActionIcon
         SYNC,
         UNDO,
         UPLOAD,
+        VALIDATE,
         WARNING
     }
 }

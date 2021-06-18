@@ -91,6 +91,9 @@
         x:Key="Upload"
         UriSource="/ActionIcon;component/icons/Upload.png" />
     <BitmapImage
+        x:Key="Validate"
+        UriSource="/ActionIcon;component/icons/Validate.png" />
+    <BitmapImage
         x:Key="Warning"
         UriSource="/ActionIcon;component/icons/Warning.png" />
 </ResourceDictionary>

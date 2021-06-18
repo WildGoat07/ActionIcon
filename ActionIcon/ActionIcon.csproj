@@ -46,6 +46,7 @@
     <None Remove="icons\Sync.png" />
     <None Remove="icons\Undo.png" />
     <None Remove="icons\Upload.png" />
+    <None Remove="icons\Validate.png" />
     <None Remove="icons\Warning.png" />
     <None Include="..\LICENSE">
       <Pack>True</Pack>
@@ -86,6 +87,7 @@
     <Resource Include="icons\Sync.png" />
     <Resource Include="icons\Undo.png" />
     <Resource Include="icons\Upload.png" />
+    <Resource Include="icons\Validate.png" />
     <Resource Include="icons\Warning.png" />
   </ItemGroup>
 </Project>

@@ -169,6 +169,7 @@ namespace ActionIcon
             Icon.SYNC => "Sync",
             Icon.UNDO => "Undo",
             Icon.UPLOAD => "Upload",
+            Icon.VALIDATE => "Validate",
             Icon.WARNING => "Warning",
             _ => null,
         };
