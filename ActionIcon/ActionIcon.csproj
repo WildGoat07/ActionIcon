@@ -12,6 +12,7 @@
     <NeutralLanguage>en</NeutralLanguage>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <Version>1.0.1</Version>
+    <Nullable>enable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>

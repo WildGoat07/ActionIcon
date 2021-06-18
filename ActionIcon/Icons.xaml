@@ -1,0 +1,96 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <BitmapImage
+        x:Key="Add"
+        UriSource="/ActionIcon;component/icons/Add.png" />
+    <BitmapImage
+        x:Key="Alert"
+        UriSource="/ActionIcon;component/icons/Alert.png" />
+    <BitmapImage
+        x:Key="Delete"
+        UriSource="/ActionIcon;component/icons/Delete.png" />
+    <BitmapImage
+        x:Key="Download"
+        UriSource="/ActionIcon;component/icons/Download.png" />
+    <BitmapImage
+        x:Key="Edit"
+        UriSource="/ActionIcon;component/icons/Edit.png" />
+    <BitmapImage
+        x:Key="EditReverse"
+        UriSource="/ActionIcon;component/icons/Edit_reverse.png" />
+    <BitmapImage
+        x:Key="Error"
+        UriSource="/ActionIcon;component/icons/Error.png" />
+    <BitmapImage
+        x:Key="Find"
+        UriSource="/ActionIcon;component/icons/Find.png" />
+    <BitmapImage
+        x:Key="Help"
+        UriSource="/ActionIcon;component/icons/Help.png" />
+    <BitmapImage
+        x:Key="Import"
+        UriSource="/ActionIcon;component/icons/Import.png" />
+    <BitmapImage
+        x:Key="Info"
+        UriSource="/ActionIcon;component/icons/Info.png" />
+    <BitmapImage
+        x:Key="Lock"
+        UriSource="/ActionIcon;component/icons/Lock.png" />
+    <BitmapImage
+        x:Key="New"
+        UriSource="/ActionIcon;component/icons/New.png" />
+    <BitmapImage
+        x:Key="Next"
+        UriSource="/ActionIcon;component/icons/Next.png" />
+    <BitmapImage
+        x:Key="No"
+        UriSource="/ActionIcon;component/icons/No.png" />
+    <BitmapImage
+        x:Key="Ok"
+        UriSource="/ActionIcon;component/icons/Ok.png" />
+    <BitmapImage
+        x:Key="Open"
+        UriSource="/ActionIcon;component/icons/Open.png" />
+    <BitmapImage
+        x:Key="Pause"
+        UriSource="/ActionIcon;component/icons/Pause.png" />
+    <BitmapImage
+        x:Key="Redo"
+        UriSource="/ActionIcon;component/icons/Redo.png" />
+    <BitmapImage
+        x:Key="Refresh"
+        UriSource="/ActionIcon;component/icons/Refresh.png" />
+    <BitmapImage
+        x:Key="Previous"
+        UriSource="/ActionIcon;component/icons/Previous.png" />
+    <BitmapImage
+        x:Key="Remove"
+        UriSource="/ActionIcon;component/icons/Remove.png" />
+    <BitmapImage
+        x:Key="Run"
+        UriSource="/ActionIcon;component/icons/Run.png" />
+    <BitmapImage
+        x:Key="Save"
+        UriSource="/ActionIcon;component/icons/Save.png" />
+    <BitmapImage
+        x:Key="Share"
+        UriSource="/ActionIcon;component/icons/Share.png" />
+    <BitmapImage
+        x:Key="Star"
+        UriSource="/ActionIcon;component/icons/Star.png" />
+    <BitmapImage
+        x:Key="Stop"
+        UriSource="/ActionIcon;component/icons/Stop.png" />
+    <BitmapImage
+        x:Key="Sync"
+        UriSource="/ActionIcon;component/icons/Sync.png" />
+    <BitmapImage
+        x:Key="Undo"
+        UriSource="/ActionIcon;component/icons/Undo.png" />
+    <BitmapImage
+        x:Key="Upload"
+        UriSource="/ActionIcon;component/icons/Upload.png" />
+    <BitmapImage
+        x:Key="Warning"
+        UriSource="/ActionIcon;component/icons/Warning.png" />
+</ResourceDictionary>

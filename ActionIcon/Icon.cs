@@ -6,7 +6,6 @@ namespace ActionIcon
 {
     public enum Icon
     {
-        NONE,
         ADD,
         ALERT,
         DELETE,

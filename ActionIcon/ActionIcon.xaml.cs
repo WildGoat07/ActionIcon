@@ -20,9 +20,9 @@ namespace ActionIcon
     {
         public static readonly DependencyProperty ActionProperty = DependencyProperty.Register(
             nameof(Action),
-            typeof(Icon),
+            typeof(Icon?),
             typeof(ActionIcon),
-            new FrameworkPropertyMetadata(Icon.NONE, FrameworkPropertyMetadataOptions.AffectsRender));
+            new FrameworkPropertyMetadata(null, FrameworkPropertyMetadataOptions.AffectsRender, OnActionPropertyChanged));
 
         public static readonly DependencyProperty ActionSourceProperty = DependencyProperty.Register(
             nameof(ActionSource),
@@ -37,10 +37,10 @@ namespace ActionIcon
             new FrameworkPropertyMetadata(null, FrameworkPropertyMetadataOptions.AffectsRender));
 
         public static readonly DependencyProperty ModifierProperty = DependencyProperty.Register(
-            nameof(Modifier),
-            typeof(Icon),
+                    nameof(Modifier),
+            typeof(Icon?),
             typeof(ActionIcon),
-            new FrameworkPropertyMetadata(Icon.NONE, FrameworkPropertyMetadataOptions.AffectsRender));
+            new FrameworkPropertyMetadata(null, FrameworkPropertyMetadataOptions.AffectsRender, OnModifierPropertyChanged));
 
         public static readonly DependencyProperty ModifierSourceProperty = DependencyProperty.Register(
             nameof(ModifierSource),
@@ -50,9 +50,9 @@ namespace ActionIcon
 
         public static readonly DependencyProperty StatusProperty = DependencyProperty.Register(
             nameof(Status),
-            typeof(Icon),
+            typeof(Icon?),
             typeof(ActionIcon),
-            new FrameworkPropertyMetadata(Icon.NONE, FrameworkPropertyMetadataOptions.AffectsRender));
+            new FrameworkPropertyMetadata(null, FrameworkPropertyMetadataOptions.AffectsRender, OnStatusPropertyChanged));
 
         public static readonly DependencyProperty StatusSourceProperty = DependencyProperty.Register(
             nameof(StatusSource),
@@ -72,9 +72,9 @@ namespace ActionIcon
         /// Icon used in the top left area
         /// </summary>
         [Description("Icon in the top left."), Category("Appearance")]
-        public Icon Action
+        public Icon? Action
         {
-            get => (Icon)GetValue(ActionProperty);
+            get => GetValue(ActionProperty) as Icon?;
             set => SetValue(ActionProperty, value);
         }
 
@@ -82,9 +82,9 @@ namespace ActionIcon
         /// Custom source image for the top left area. Overwrites the Action property.
         /// </summary>
         [Description("Custom source for the icon in the top left. The Action property will have no effect."), Category("Appearance")]
-        public ImageSource ActionSource
+        public ImageSource? ActionSource
         {
-            get => (ImageSource)GetValue(ActionSourceProperty);
+            get => GetValue(ActionSourceProperty) as ImageSource;
             set => SetValue(ActionSourceProperty, value);
         }
 
@@ -92,9 +92,9 @@ namespace ActionIcon
         /// Source image of the base reference icon.
         /// </summary>
         [Description("Source of the main icon."), Category("Appearance")]
-        public ImageSource BaseSource
+        public ImageSource? BaseSource
         {
-            get => (ImageSource)GetValue(BaseSourceProperty);
+            get => GetValue(BaseSourceProperty) as ImageSource;
             set => SetValue(BaseSourceProperty, value);
         }
 
@@ -102,9 +102,9 @@ namespace ActionIcon
         /// Icon used in the bottom left area
         /// </summary>
         [Description("Icon in the bottom left."), Category("Appearance")]
-        public Icon Modifier
+        public Icon? Modifier
         {
-            get => (Icon)GetValue(ModifierProperty);
+            get => GetValue(ModifierProperty) as Icon?;
             set => SetValue(ModifierProperty, value);
         }
 
@@ -112,9 +112,9 @@ namespace ActionIcon
         /// Custom source image for the bottom left area. Overwrites the Action property.
         /// </summary>
         [Description("Custom source for the icon in the bottom left. The Modifier property will have no effect."), Category("Appearance")]
-        public ImageSource ModifierSource
+        public ImageSource? ModifierSource
         {
-            get => (ImageSource)GetValue(ModifierSourceProperty);
+            get => GetValue(ModifierSourceProperty) as ImageSource;
             set => SetValue(ModifierSourceProperty, value);
         }
 
@@ -122,9 +122,9 @@ namespace ActionIcon
         /// Icon used in the bottom right area
         /// </summary>
         [Description("Icon in the bottom right."), Category("Appearance")]
-        public Icon Status
+        public Icon? Status
         {
-            get => (Icon)GetValue(StatusProperty);
+            get => GetValue(StatusProperty) as Icon?;
             set => SetValue(StatusProperty, value);
         }
 
@@ -132,34 +132,14 @@ namespace ActionIcon
         /// Custom source image for the bottom right area. Overwrites the Action property.
         /// </summary>
         [Description("Custom source for the icon in the bottom right. The Status property will have no effect."), Category("Appearance")]
-        public ImageSource StatusSource
+        public ImageSource? StatusSource
         {
-            get => (ImageSource)GetValue(StatusSourceProperty);
+            get => GetValue(StatusSourceProperty) as ImageSource;
             set => SetValue(StatusSourceProperty, value);
         }
 
-        protected override void OnPropertyChanged(DependencyPropertyChangedEventArgs e)
+        private static string? GetIconKey(Icon? icon) => icon switch
         {
-            base.OnPropertyChanged(e);
-            if (e.Property == BaseSourceProperty)
-                baseImage.Source = (ImageSource)e.NewValue;
-            else if (e.Property == ActionSourceProperty)
-                actionImage.Source = (ImageSource)e.NewValue;
-            else if (e.Property == StatusSourceProperty)
-                statusImage.Source = (ImageSource)e.NewValue;
-            else if (e.Property == ModifierSourceProperty)
-                modifierImage.Source = (ImageSource)e.NewValue;
-            else if (e.Property == ActionProperty && ActionSource == null)
-                actionImage.Source = TryFindResource(GetIconKey((Icon)e.NewValue)) as ImageSource;
-            else if (e.Property == StatusProperty && StatusSource == null)
-                statusImage.Source = TryFindResource(GetIconKey((Icon)e.NewValue)) as ImageSource;
-            else if (e.Property == ModifierProperty && ModifierSource == null)
-                modifierImage.Source = TryFindResource(GetIconKey((Icon)e.NewValue)) as ImageSource;
-        }
-
-        private string GetIconKey(Icon icon) => icon switch
-        {
-            Icon.NONE => "None",
             Icon.ADD => "Add",
             Icon.ALERT => "Alert",
             Icon.DELETE => "Delete",
@@ -192,5 +172,32 @@ namespace ActionIcon
             Icon.WARNING => "Warning",
             _ => null,
         };
+
+        private static void OnActionPropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var actionIcon = (ActionIcon)d;
+            var key = GetIconKey((Icon)e.NewValue);
+            actionIcon.ActionSource = key is null
+                ? null
+                : actionIcon.TryFindResource(key) as ImageSource;
+        }
+
+        private static void OnModifierPropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var actionIcon = (ActionIcon)d;
+            var key = GetIconKey((Icon)e.NewValue);
+            actionIcon.ModifierSource = key is null
+                ? null
+                : actionIcon.TryFindResource(key) as ImageSource;
+        }
+
+        private static void OnStatusPropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var actionIcon = (ActionIcon)d;
+            var key = GetIconKey((Icon)e.NewValue);
+            actionIcon.StatusSource = key is null
+                ? null
+                : actionIcon.TryFindResource(key) as ImageSource;
+        }
     }
 }
