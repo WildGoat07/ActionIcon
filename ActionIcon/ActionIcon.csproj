@@ -11,7 +11,7 @@
     <RepositoryUrl>https://github.com/WildGoat07/ActionIcon</RepositoryUrl>
     <NeutralLanguage>en</NeutralLanguage>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
-    <Version>1.0.1</Version>
+    <Version>1.0.2</Version>
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
