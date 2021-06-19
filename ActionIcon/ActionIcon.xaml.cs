@@ -68,6 +68,15 @@ namespace ActionIcon
             InitializeComponent();
         }
 
+        [Description("Triggers after the Action property has changed.")]
+        public event EventHandler<IconChangedEventArgs>? ActionChanged;
+
+        [Description("Triggers after the Modifier property has changed.")]
+        public event EventHandler<IconChangedEventArgs>? ModifierChanged;
+
+        [Description("Triggers after the Status property has changed.")]
+        public event EventHandler<IconChangedEventArgs>? StatusChanged;
+
         /// <summary>
         /// Icon used in the top left area
         /// </summary>
@@ -178,28 +187,31 @@ namespace ActionIcon
         private static void OnActionPropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             var actionIcon = (ActionIcon)d;
-            var key = GetIconKey((Icon)e.NewValue);
+            var key = GetIconKey(e.NewValue as Icon?);
             actionIcon.ActionSource = key is null
                 ? null
                 : actionIcon.TryFindResource(key) as ImageSource;
+            actionIcon.ActionChanged?.Invoke(actionIcon, new IconChangedEventArgs(e.OldValue as Icon?, e.NewValue as Icon?));
         }
 
         private static void OnModifierPropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             var actionIcon = (ActionIcon)d;
-            var key = GetIconKey((Icon)e.NewValue);
+            var key = GetIconKey(e.NewValue as Icon?);
             actionIcon.ModifierSource = key is null
                 ? null
                 : actionIcon.TryFindResource(key) as ImageSource;
+            actionIcon.ModifierChanged?.Invoke(actionIcon, new IconChangedEventArgs(e.OldValue as Icon?, e.NewValue as Icon?));
         }
 
         private static void OnStatusPropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             var actionIcon = (ActionIcon)d;
-            var key = GetIconKey((Icon)e.NewValue);
+            var key = GetIconKey(e.NewValue as Icon?);
             actionIcon.StatusSource = key is null
                 ? null
                 : actionIcon.TryFindResource(key) as ImageSource;
+            actionIcon.StatusChanged?.Invoke(actionIcon, new IconChangedEventArgs(e.OldValue as Icon?, e.NewValue as Icon?));
         }
     }
 }
