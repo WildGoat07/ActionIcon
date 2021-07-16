@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ActionIcon
+namespace Wildgoat.ActionIcon
 {
     public enum Icon
     {
