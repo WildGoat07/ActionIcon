@@ -30,14 +30,26 @@ namespace Wildgoat.ActionIcon
             typeof(ActionIcon),
             new FrameworkPropertyMetadata(null, FrameworkPropertyMetadataOptions.AffectsRender));
 
+        public static readonly DependencyProperty ActionTemplateProperty = DependencyProperty.Register(
+            nameof(ActionTemplate),
+            typeof(DataTemplate),
+            typeof(ActionIcon),
+            new FrameworkPropertyMetadata(null, FrameworkPropertyMetadataOptions.AffectsRender));
+
         public static readonly DependencyProperty BaseSourceProperty = DependencyProperty.Register(
             nameof(BaseSource),
             typeof(ImageSource),
             typeof(ActionIcon),
             new FrameworkPropertyMetadata(null, FrameworkPropertyMetadataOptions.AffectsRender));
 
+        public static readonly DependencyProperty BaseTemplateProperty = DependencyProperty.Register(
+            nameof(BaseTemplate),
+            typeof(DataTemplate),
+            typeof(ActionIcon),
+            new FrameworkPropertyMetadata(null, FrameworkPropertyMetadataOptions.AffectsRender));
+
         public static readonly DependencyProperty ModifierProperty = DependencyProperty.Register(
-                    nameof(Modifier),
+            nameof(Modifier),
             typeof(Icon?),
             typeof(ActionIcon),
             new FrameworkPropertyMetadata(null, FrameworkPropertyMetadataOptions.AffectsRender, OnModifierPropertyChanged));
@@ -45,6 +57,12 @@ namespace Wildgoat.ActionIcon
         public static readonly DependencyProperty ModifierSourceProperty = DependencyProperty.Register(
             nameof(ModifierSource),
             typeof(ImageSource),
+            typeof(ActionIcon),
+            new FrameworkPropertyMetadata(null, FrameworkPropertyMetadataOptions.AffectsRender));
+
+        public static readonly DependencyProperty ModifierTemplateProperty = DependencyProperty.Register(
+            nameof(ModifierTemplate),
+            typeof(DataTemplate),
             typeof(ActionIcon),
             new FrameworkPropertyMetadata(null, FrameworkPropertyMetadataOptions.AffectsRender));
 
@@ -57,6 +75,12 @@ namespace Wildgoat.ActionIcon
         public static readonly DependencyProperty StatusSourceProperty = DependencyProperty.Register(
             nameof(StatusSource),
             typeof(ImageSource),
+            typeof(ActionIcon),
+            new FrameworkPropertyMetadata(null, FrameworkPropertyMetadataOptions.AffectsRender));
+
+        public static readonly DependencyProperty StatusTemplateProperty = DependencyProperty.Register(
+                                                                    nameof(StatusTemplate),
+            typeof(DataTemplate),
             typeof(ActionIcon),
             new FrameworkPropertyMetadata(null, FrameworkPropertyMetadataOptions.AffectsRender));
 
@@ -88,13 +112,23 @@ namespace Wildgoat.ActionIcon
         }
 
         /// <summary>
-        /// Custom source image for the top left area. Overwrites the Action property.
+        /// Custom source image for the top left area.
         /// </summary>
-        [Description("Custom source for the icon in the top left. The Action property will have no effect."), Category("Appearance")]
+        [Description("Custom source for the icon in the top left."), Category("Appearance")]
         public ImageSource? ActionSource
         {
             get => GetValue(ActionSourceProperty) as ImageSource;
             set => SetValue(ActionSourceProperty, value);
+        }
+
+        /// <summary>
+        /// Custom template for the top left area.
+        /// </summary>
+        [Description("Custom template icon in the top left.")]
+        public DataTemplate? ActionTemplate
+        {
+            get => GetValue(ActionTemplateProperty) as DataTemplate;
+            set => SetValue(ActionTemplateProperty, value);
         }
 
         /// <summary>
@@ -108,6 +142,16 @@ namespace Wildgoat.ActionIcon
         }
 
         /// <summary>
+        /// Custom template for the main icon.
+        /// </summary>
+        [Description("Custom template of the main icon.")]
+        public DataTemplate? BaseTemplate
+        {
+            get => GetValue(BaseTemplateProperty) as DataTemplate;
+            set => SetValue(BaseTemplateProperty, value);
+        }
+
+        /// <summary>
         /// Icon used in the bottom left area
         /// </summary>
         [Description("Icon in the bottom left."), Category("Appearance")]
@@ -118,13 +162,23 @@ namespace Wildgoat.ActionIcon
         }
 
         /// <summary>
-        /// Custom source image for the bottom left area. Overwrites the Action property.
+        /// Custom source image for the bottom left area.
         /// </summary>
-        [Description("Custom source for the icon in the bottom left. The Modifier property will have no effect."), Category("Appearance")]
+        [Description("Custom source for the icon in the bottom left."), Category("Appearance")]
         public ImageSource? ModifierSource
         {
             get => GetValue(ModifierSourceProperty) as ImageSource;
             set => SetValue(ModifierSourceProperty, value);
+        }
+
+        /// <summary>
+        /// Custom template for the bottom left area.
+        /// </summary>
+        [Description("Custom template icon in the bottom left.")]
+        public DataTemplate? ModifierTemplate
+        {
+            get => GetValue(ModifierTemplateProperty) as DataTemplate;
+            set => SetValue(ModifierTemplateProperty, value);
         }
 
         /// <summary>
@@ -138,13 +192,23 @@ namespace Wildgoat.ActionIcon
         }
 
         /// <summary>
-        /// Custom source image for the bottom right area. Overwrites the Action property.
+        /// Custom source image for the bottom right area.
         /// </summary>
-        [Description("Custom source for the icon in the bottom right. The Status property will have no effect."), Category("Appearance")]
+        [Description("Custom source for the icon in the bottom right."), Category("Appearance")]
         public ImageSource? StatusSource
         {
             get => GetValue(StatusSourceProperty) as ImageSource;
             set => SetValue(StatusSourceProperty, value);
+        }
+
+        /// <summary>
+        /// Custom template for the bottom right area.
+        /// </summary>
+        [Description("Custom template icon in the bottom left.")]
+        public DataTemplate? StatusTemplate
+        {
+            get => GetValue(StatusTemplateProperty) as DataTemplate;
+            set => SetValue(StatusTemplateProperty, value);
         }
 
         private static string? GetIconKey(Icon? icon) => icon switch
